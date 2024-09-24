@@ -22,7 +22,6 @@ if (localStorage.getItem("leprechaun-price") == null, localStorage.getItem("lepr
 
 window.onload = function() {
 
-    displayPrices();
     displayShamrocks();
 }
 
@@ -39,12 +38,6 @@ function addShamrock() {
     displayShamrocks();
 }
 
-function displayPrices() {
-    document.getElementById("sateenkaari-hinta").innerHTML = localStorage.getItem("sateenkaari-price");
-    document.getElementById("kultapata-hinta").innerHTML = localStorage.getItem("kultapata-price");
-    document.getElementById("leprechaun-hinta").innerHTML = localStorage.getItem("leprechaun-price");
-}
-
 function sateenkaari() {
     localStorage.setItem("shamrock-amount", parseFloat(localStorage.getItem("shamrock-amount")) + parseFloat(localStorage.getItem("sateenkaari-sps")));
     displayShamrocks();
@@ -58,63 +51,6 @@ function kultapata() {
 function leprechaun() {
     localStorage.setItem("shamrock-amount", parseFloat(localStorage.getItem("shamrock-amount")) + parseFloat(localStorage.getItem("leprechaun-sps")));
     displayShamrocks()
-}
-
-function ostaSateenkaari() {
-    if (localStorage.getItem("shamrock-amount") >= localStorage.getItem("sateenkaari-price") && localStorage.getItem("sateenkaari-bought") != "true") {
-        localStorage.setItem("sateenkaari-bought", "true");
-        localStorage.setItem("shamrock-amount", parseFloat(localStorage.getItem("shamrock-amount")) - parseFloat(localStorage.getItem("sateenkaari-price")));
-        localStorage.setItem("sateenkaari-price", parseFloat(localStorage.getItem("sateenkaari-price") * 1.5))
-    }
-
-    if (parseFloat(localStorage.getItem("shamrock-amount")) >= parseFloat(localStorage.getItem("sateenkaari-price"))) {
-        localStorage.setItem("shamrock-amount", parseFloat(localStorage.getItem("shamrock-amount")) - parseFloat(localStorage.getItem("sateenkaari-price")));
-        localStorage.setItem("sateenkaari-sps", parseFloat(localStorage.getItem("sateenkaari-sps")) + 1)
-        localStorage.setItem("sateenkaari-price", Math.round(parseFloat(localStorage.getItem("sateenkaari-price") * 1.5)))
-    } else {
-        return;
-    }
-    displayPrices();
-    displayShamrocks();
-    location.reload();
-}
-
-function ostaKultapata() {
-    if (localStorage.getItem("shamrock-amount") >= localStorage.getItem("kultapata-price") && localStorage.getItem("kultapata-bought") != "true") {
-        localStorage.setItem("kultapata-bought", "true");
-        localStorage.setItem("shamrock-amount", parseFloat(localStorage.getItem("shamrock-amount")) - parseFloat(localStorage.getItem("kultapata-price")));
-        localStorage.setItem("kultapata-price", parseFloat(localStorage.getItem("kultapata-price") * 1.5))
-    }
-
-    if (parseFloat(localStorage.getItem("shamrock-amount")) >= parseFloat(localStorage.getItem("kultapata-price"))) {
-        localStorage.setItem("shamrock-amount", parseFloat(localStorage.getItem("shamrock-amount")) - parseFloat(localStorage.getItem("kultapata-price")));
-        localStorage.setItem("kultapata-sps", parseFloat(localStorage.getItem("kultapata-sps")) + 1)
-        localStorage.setItem("kultapata-price", Math.round(parseFloat(localStorage.getItem("kultapata-price") * 1.5)))
-    } else {
-        return;
-    }
-    displayPrices();
-    displayShamrocks();
-    location.reload();
-}
-
-function ostaLeprechaun() {
-    if (localStorage.getItem("shamrock-amount") >= localStorage.getItem("leprechaun-price") && localStorage.getItem("leprechaun-bought") != "true") {
-        localStorage.setItem("leprechaun-bought", "true");
-        localStorage.setItem("shamrock-amount", parseFloat(localStorage.getItem("shamrock-amount")) - parseFloat(localStorage.getItem("leprechaun-price")));
-        localStorage.setItem("leprechaun-price", parseFloat(localStorage.getItem("leprechaun-price") * 1.5))
-    }
-
-    if (parseFloat(localStorage.getItem("shamrock-amount")) >= parseFloat(localStorage.getItem("leprechaun-price"))) {
-        localStorage.setItem("shamrock-amount", parseFloat(localStorage.getItem("shamrock-amount")) - parseFloat(localStorage.getItem("leprechaun-price")));
-        localStorage.setItem("leprechaun-sps", parseFloat(localStorage.getItem("leprechaun-sps")) + 1)
-        localStorage.setItem("leprechaun-price", Math.round(parseFloat(localStorage.getItem("leprechaun-price") * 1.5)))
-    } else {
-        return;
-    }
-    displayPrices();
-    displayShamrocks();
-    location.reload();
 }
 
 if (localStorage.getItem("sateenkaari-bought") == "true") {
