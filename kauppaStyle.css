@@ -1,0 +1,76 @@
+body {
+    background: url(images/kauppatiski.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.kauppa-button {
+    background-color: #706500;
+    width: 150px;
+    height: 75px;
+    margin: 0px;
+    font-size: 200%;
+    border-radius: 25px;
+    border: 5px solid rgb(77, 65, 1);
+}
+
+.kauppa-container {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.shamrock-container {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.shamrock-img {
+    width: 75px;
+    height: 0%;
+    padding-top: 3%;
+    padding-left: 0px;
+}
+
+.shamrock {
+    color: white;
+    font-size: 280%;
+    padding-left: 1%;
+    padding-top: 4%;
+}
+
+.hinta-tuote {
+    display: flex;
+    padding: 0px;
+    justify-content: right;
+}
+
+.tuotteet-container {
+    position: absolute;
+    right: 10px;
+    top: 20%;
+}
+
+.tuote {
+    background-color: #706500;
+    width: 200px;
+    height: 75px;
+    margin: 0px;
+    font-size: 150%;
+    border-radius: 25px;
+    border: 5px solid rgb(77, 65, 1);
+}
+
+.hinta-teksti {
+    color: white;
+    font-size: 175%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
