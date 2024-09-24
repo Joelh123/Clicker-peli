@@ -22,10 +22,7 @@ if (localStorage.getItem("leprechaun-price") == null, localStorage.getItem("lepr
 
 window.onload = function() {
 
-    if (window.location.pathname == "/kauppa.html") {
-        displayPrices();
-    }
-
+    displayPrices();
     displayShamrocks();
 }
 
