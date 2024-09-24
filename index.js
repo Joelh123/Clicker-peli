@@ -70,16 +70,3 @@ if (localStorage.getItem("leprechaun-bought") == "true") {
         leprechaun();
     }, 1000);
 }
-
-function lisaaVoittoButton(){
-    document.getElementById("voitto-button").innerHTML = '<button class="voitto-button-style" onclick="voittoButton()">VOITTO</button>';
-}
-
-function voittoButton() {
-    localStorage.clear()
-    location.reload()
-}
-
-if (parseFloat(localStorage.getItem("shamrock-amount")) >= 10000) {
-    lisaaVoittoButton()
-}
